@@ -1,0 +1,147 @@
+/* --- RESET SIMPLE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9f9f9;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #1d3557;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- NAVIGATION --- */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #f1faee;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 20px;
+}
+
+nav ul li a:hover {
+    background-color: #f1faee;
+    color: #1d3557;
+}
+
+/* --- SECTIONS --- */
+
+img {
+  width: 500px;      /* largeur fixe à 300px */
+  height: auto;      /* hauteur automatique pour garder les proportions */
+  display: block;
+  margin: 1rem auto; /* centrer horizontalement */
+  border-radius: 8px; /* optionnel, coins arrondis */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* optionnel */
+}
+
+main section {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #ffffff;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    color: #457b9d;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+/* --- PARAGRAPHES --- */
+section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* --- FORMULAIRES --- */
+input[type="text"] {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    width: 250px;
+    max-width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #1d3557;
+}
+
+button {
+    padding: 0.7rem 1.2rem;
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #457b9d;
+}
+
+/* --- FORM RECOMMANDATIONS --- */
+form {
+    margin-top: 1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1d3557;
+    color: #f1faee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
