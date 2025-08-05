@@ -16,7 +16,7 @@
                 <li><a href="#Livres">Livres</a></li>
                 <li><a href="#Films">Films</a></li>
                 <li><a href="#Séries">Séries</a></li>
-                <li><a href="#Musique">Musique</a></li>
+                <li><a href="#Musiques">Musiques</a></li>
                 <li><a href="#recommandations">Vos recommandations</a></li>
             </ul>
         </Nav>
@@ -41,10 +41,10 @@
             <h2>Livres</h2>
             <p>Découvrez une sélection de livres qui m'ont marqué, allant de la fantasy à la science-fiction, en passant par la romance et le fantastique.
                  Ainsi que des classiques et des livres connus</p>
-            <input type="text" placeholder="Rechercher un livre...">
-            <button type="submit">Rechercher</button>
-            <input type="text" placeholder="recherche par mot clés">
-            <button type="submit">Rechercher</button>
+           <input type="text" id="searchLivre1" placeholder="Rechercher un livre par titre...">
+            <button id="btnSearch1">Rechercher</button>
+            <input type="text" id="searchLivreMotCle" placeholder="Recherche par mot clés...">
+             <button id="btnSearchMotCle">Rechercher</button>
         </section>
         <section id="Films">
             <h2>Films</h2>
@@ -53,29 +53,29 @@
                 Tel que Sebastian Stan, Bill Skarsgård, et d'autres qu'on retrouves dans ma liste des favs sur min site.
                 Des genres variés pour tous les goûts.</p>
 
-            <input type="text" placeholder="Rechercher un film...">
-            <button type="submit">Rechercher</button>
-            <input type="text" placeholder="recherche par mot clés">
-            <button type="submit">Rechercher</button>
+            <input type="text" id="searchFilm1" placeholder="Rechercher un film...">
+            <button type="submit" id="btnSearchFilm1">Rechercher</button>
+            <input type="text" id="searchFilmMotCle" placeholder="recherche par mot clés">
+            <button type="submit" id="btnSearchFilmMotCle">Rechercher</button>
         </section>
 
-        <section id="Séries">
+        <section id="Series">
             <h2>Séries</h2>
             <p>Plongez dans l'univers des séries que j'adore, des thrillers palpitants aux comédies légères, en passant par les drames captivants.
                 Des séries qui m'ont marqué et que je recommande vivement en passant par des classique et plus connu et coup de coeur.</p>
-            <input type="text" placeholder="Rechercher un série...">
-            <button type="submit">Rechercher</button>
-            <input type="text" placeholder="recherche par mot clés">
-            <button type="submit">Rechercher</button>
+            <input type="text"  id="searchSerie1" placeholder="Rechercher un série...">
+            <button type="submit" id="btnSearchSerie1">Rechercher</button>
+            <input type="text" id="searchSerieMotCle" placeholder="recherche par mot clés">
+            <button type="submit" id="btnSearchSerieMotCle">Rechercher</button>
         </section>
-        <section id="Musique">
-            <h2>Musique</h2>
+        <section id="Musiques">
+            <h2>Musiques</h2>
             <p>Plongez dans ma playlist musicale, où le rock, la pop, les comédies musicales, la variété française, le folk et l'alternative se rencontrent.
                 Des artistes et des morceaux qui font battre mon cœur à la fois connus ou non.</p>
-            <input type="text" placeholder="Rechercher un Musique...">
-            <button type="submit">Rechercher</button>
-            <input type="text" placeholder="recherche par mot clés">
-            <button type="submit">Rechercher</button>
+            <input type="text" id="searchMusique1" placeholder="Rechercher un Musique...">
+            <button type="submit" id="btnSearchMusique1">Rechercher</button>
+            <input type="text" id="searchMusiqueMotCle" placeholder="recherche par mot clés">
+            <button type="submit" id="btnSearchMusiqueMotCle">Rechercher</button>
         </section>
         <section id="recommandations">
             <h2>vos recommandations</h2>
@@ -91,6 +91,6 @@
             made by Emmie B
            </p>
     </footer>
-       <script src="app.js"></script>
+       <script src="script.js"></script>
 </body>
 </html>
