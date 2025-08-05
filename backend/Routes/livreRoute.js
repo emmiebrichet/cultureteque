@@ -7,8 +7,9 @@ const {
   getLivreByAuthorName,
   getLivreByTitle,
   getLivreByWordInTitle,
-  getLivreByMotCle
-} = require('../Controllers/livreController');
+  getLivreByMotCle,
+  getLivreByGenre
+} = require('../Controllers/LivreController');
 
 // Routes claires et en camelCase
 router.get('/all_livres', getAllLivres);
@@ -17,5 +18,6 @@ router.get('/livreByAuthorName/:authorName', getLivreByAuthorName);
 router.get('/livreByTitle/:title', getLivreByTitle);
 router.get('/livreByWordInTitle/:word', getLivreByWordInTitle);
 router.get('/livreByMotCle/:motCle', getLivreByMotCle);
+router.get('/livreByGenre/:genre', getLivreByGenre);
 
 module.exports = router;

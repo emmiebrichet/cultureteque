@@ -107,3 +107,18 @@ exports.getLivreByMotCle = (req, res) => {
     return res.json(results);
   });
 };
+
+
+//Get livre by Genre
+exports.getLivreByGenre = (req, res) => {
+  const genre = req.params.genre;
+  const query = 'SELECT * FROM livres WHERE genre = ?';
+
+  db.query(query, [genre], (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.json(results);
+  });
+};

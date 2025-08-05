@@ -7,7 +7,8 @@ const {
   getMusiqueByArtistName,
   getMusiqueByAlbum,
   getMusiqueByWordInAlbum,
-  getMusiqueByMotCle
+  getMusiqueByMotCle,
+  getMusiqueByGenre
 } = require('../Controllers/musiqueController');
 
 // Routes avec noms cohérents en français et en camelCase
@@ -17,5 +18,6 @@ router.get('/musiqueByArtistName/:artistName', getMusiqueByArtistName);
 router.get('/musiqueByAlbum/:album', getMusiqueByAlbum);
 router.get('/musiqueByWordInAlbum/:word', getMusiqueByWordInAlbum);
 router.get('/musiqueByMotCle/:motCle', getMusiqueByMotCle);
+router.get('/musiqueByGenre/:genre', getMusiqueByGenre);
 
 module.exports = router;

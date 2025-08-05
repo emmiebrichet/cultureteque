@@ -7,8 +7,9 @@ const {
   getFilmByActorName,
   getFilmByTitle,
   getFilmByWordInTitle,
-  getFilmByMotCle
-} = require('../Controllers/filmController');
+  getFilmByMotCle,
+  getFilmByGenre
+} = require('../Controllers/FilmController');
 
 // Routes cohérentes et en camelCase
 router.get('/all_films', getAllFilms);
@@ -17,5 +18,6 @@ router.get('/filmByActorName/:actorName', getFilmByActorName);
 router.get('/filmByTitle/:title', getFilmByTitle);
 router.get('/filmByWordInTitle/:word', getFilmByWordInTitle);
 router.get('/filmByMotCle/:motCle', getFilmByMotCle);
+router.get('/filmByGenre/:genre', getFilmByGenre);
 
 module.exports = router;

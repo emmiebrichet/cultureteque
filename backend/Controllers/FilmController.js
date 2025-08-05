@@ -92,3 +92,18 @@ exports.getFilmByMotCle = (req, res) => {
     res.json(results);
   });
 };
+
+
+//Get Movie by Genre
+exports.getFilmByGenre = (req, res) => {
+  const genre = req.params.genre;
+  const query = 'SELECT * FROM films WHERE genre = ?';
+
+  db.query(query, [genre], (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.json(results);
+  });
+};

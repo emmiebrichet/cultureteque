@@ -92,3 +92,18 @@ exports.getMusiqueByMotCle = (req, res) => {
     res.json(results);
   });
 };
+
+
+//Get musique by Genre
+exports.getMusiqueByGenre = (req, res) => {
+  const genre = req.params.genre;
+  const query = 'SELECT * FROM musiques WHERE genre = ?';
+
+  db.query(query, [genre], (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.json(results);
+  });
+};

@@ -7,7 +7,8 @@ const {
   getSerieByActorName,
   getSerieByTitle,
   getSerieByWordInTitle,
-  getSerieByMotCle
+  getSerieByMotCle,
+  getSerieByGenre
 } = require('../Controllers/serieController');
 
 router.get('/all_serie', getAllSerie);
@@ -16,6 +17,7 @@ router.get('/getSerieByActorName/:actorName', getSerieByActorName);
 router.get('/getSerieByTitle/:title', getSerieByTitle);
 router.get('/getSerieByWordInTitle/:word', getSerieByWordInTitle);
 router.get('/getSerieByMotCle/:motCle', getSerieByMotCle);
+router.get('/getSerieByGenre/:genre', getSerieByGenre);
 
 
 module.exports = router;

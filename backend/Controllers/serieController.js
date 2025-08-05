@@ -92,3 +92,17 @@ exports.getSerieByMotCle = (req, res) => {
     res.json(results);
   });
 };
+
+//Get serie by Genre
+exports.getSerieByGenre = (req, res) => {
+  const genre = req.params.genre;
+  const query = 'SELECT * FROM series WHERE genre = ?';
+
+  db.query(query, [genre], (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.json(results);
+  });
+};
