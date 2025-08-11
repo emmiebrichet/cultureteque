@@ -1,28 +1,39 @@
 const express = require('express');
-const app = express();
+const { sequelize } = require('./backend/models');
+
 const livreRoutes = require('./backend/Routes/livreRoute');
 const musiqueRoutes = require('./backend/Routes/musiqueRoute');
 const filmRoutes = require('./backend/Routes/filmRoute');
 const serieRoutes = require('./backend/Routes/serieRoute');
 
-// Middleware pour parser le JSON
+const app = express();
+const PORT = 2424;
+
+// Middleware JSON
 app.use(express.json());
 
-// Servir les fichiers frontend statiques
+// Fichiers statiques
 app.use(express.static('frontend'));
 
-// Utiliser les routes /livres
+// Routes API
 app.use('/livres', livreRoutes);
 app.use('/musiques', musiqueRoutes);
 app.use('/films', filmRoutes);
 app.use('/series', serieRoutes);
 
-// Route test API
+// Test API
 app.get('/api', (req, res) => {
     res.json({ message: "Bienvenue sur l'API de mon projet" });
 });
 
-// Démarrage du serveur
-app.listen(2424, () => {
-    console.log("Serveur démarré sur http://localhost:2424");
-});
+// Synchronisation Sequelize + démarrage serveur
+sequelize.sync({ alter: true })
+  .then(() => {
+    console.log("📦 Tables synchronisées avec Sequelize");
+    app.listen(PORT, () => {
+      console.log(`🚀 Serveur démarré sur http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error("❌ Erreur de synchronisation :", err);
+  });

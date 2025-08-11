@@ -1,18 +1,17 @@
-const mysql = require('mysql');
+const { Sequelize } = require("sequelize");
+require("dotenv").config();
 
-const db = mysql.createConnection({
-  host: 'localhost', // ou autre
-  user: 'root',      // ton utilisateur
-  password: '',      // ton mot de passe
-  database: 'Cultureteque'
+const sequelize = new Sequelize('Cultureteque', 'root', 'BuckyNat', {
+  host: 'localhost',
+  dialect: 'mysql',
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à la base:', err);
-    return;
-  }
-  console.log('Connecté à la base de données MySQL');
-});
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connecté à MySQL avec Sequelize');
+  })
+  .catch(err => {
+    console.error('Erreur de connexion :', err);
+  });
 
-module.exports = db;
+module.exports = sequelize;
