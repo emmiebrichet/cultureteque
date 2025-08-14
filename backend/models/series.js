@@ -90,7 +90,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Serie',
     tableName: 'series',
-    timestamps: true,  // créé automatiquement createdAt et updatedAt
+    timestamps: false,  // créé automatiquement createdAt et updatedAt
   });
 
   return Serie;

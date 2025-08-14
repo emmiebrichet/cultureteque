@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       // définir les associations ici si besoin
     }
   }
+
   Musique.init({
     imageUrl: {
       type: DataTypes.STRING(255),
@@ -16,34 +17,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: true,
     },
-    album: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
     genre: {
       type: DataTypes.STRING(255),
       allowNull: true,
     },
-    motsCle1: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
-    motsCle2: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
-    motsCle3: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
-    motsCle4: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
-    motsCle5: {
-      type: DataTypes.STRING(255),
-      allowNull: true,
-    },
+    motsCle1: { type: DataTypes.STRING(255), allowNull: true },
+    motsCle2: { type: DataTypes.STRING(255), allowNull: true },
+    motsCle3: { type: DataTypes.STRING(255), allowNull: true },
+    motsCle4: { type: DataTypes.STRING(255), allowNull: true },
+    motsCle5: { type: DataTypes.STRING(255), allowNull: true },
     anneeSortie: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -58,12 +40,19 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isUrl: true
       }
+    },
+    deezerUrl: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      validate: {
+        isUrl: true
+      }
     }
   }, {
     sequelize,
     modelName: 'Musique',
     tableName: 'musiques',
-    timestamps: true,  // createdAt et updatedAt automatiques
+    timestamps: false,
   });
 
   return Musique;

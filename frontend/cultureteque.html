@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Culturethèque</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="accueil">
+    <div class="icons">
+      <i class="fa-solid fa-music icon-blanche"></i>
+      <i class="fa-solid fa-book-open icon-blanche"></i>
+      <i class="fa-solid fa-film icon-blanche"></i>
+      <i class="fa-solid fa-video icon-blanche"></i>
+    </div>
+    <h1>Culturethèque</h1>
+    <nav>
+      <ul>
+        <l  i><a href="#accueil">Accueil</a></li>
+        <li><a href="#A-propos">À propos</a></li>
+        <li><a href="#Livres">Livres</a></li>
+        <li><a href="#Films">Films</a></li>
+        <li><a href="#Series">Séries</a></li>
+        <li><a href="#Musiques">Musiques</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <div class="head-page">
+      <h2>Bienvenue sur Culturethèque</h2>
+      <img src="./20250730_211422.jpg" alt="Intérieur d'une bibliothèque avec rayonnages" class="image-bibliotheque" loading="lazy">
+      <p>un site dédié à mes passions culturelles, mes goûts variés et mes découvertes.</p>
+    </div>
+
+    <section id="A-propos">
+      <h3>À propos de la Culturethèque</h3>
+      <p>
+        Culturethèque est une sélection personnelle et choisie par moi, Emmie B: je rassemble ici mes coups de cœur,
+        mes découvertes, mais aussi de nombreux titres très connus et appréciés du grand public.
+        Tu y trouveras à la fois des classiques reconnus et des pépites plus confidentielles — tout est choisi par moi.
+      </p>
+      <p>
+        Côté musique : rock, pop, comédies musicales, variété française, folk et alternative.
+        Pour les livres : fantasy, fantastique, science-fiction, romance — et aussi d'autres genres.
+        Séries & films couvrent l'horreur, le drame, le surnaturel, le policier, l'aventure, etc.
+      </p>
+      <p>
+        J’ai compilé une grande liste : <strong>100 livres</strong>, <strong>100 films</strong>, <strong>100 séries</strong> et
+        <strong>100 artistes</strong>. Tu peux parcourir, chercher et découvrir à ton rythme.
+      </p>
+    </section>
+
+    <section id="Livres">
+      <i class="fa-solid fa-book-open icon-457b9d"></i>
+      <h3>Livres</h3>
+      <p>Découvrez une sélection de livres qui m'ont marqué...</p>
+
+      <form class="search-group" data-type="livres">
+        <input type="search" id="searchLivre1" name="q" placeholder="Rechercher un livre par titre..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <form class="search-group" data-type="livres">
+        <input type="search" id="searchLivreMotCle" name="q" placeholder="Recherche par mot-clé..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <h4>Bonne Lecture !</h4>
+    </section>
+
+    <section id="Films">
+      <i class="fa-solid fa-film icon-457b9d"></i>
+      <h3>Films</h3>
+      <p>Explorez ma collection de films...</p>
+
+      <form class="search-group" data-type="films">
+        <input type="search" id="searchFilm1" name="q" placeholder="Rechercher un film..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <form class="search-group" data-type="films">
+        <input type="search" id="searchFilmMotCle" name="q" placeholder="Recherche par mot-clé..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <h4>Bon film !</h4>
+    </section>
+
+    <section id="Series">
+        <i class="fa-solid fa-video icon-457b9d"></i>
+      <h3>Séries</h3>
+      <p>Plongez dans l'univers des séries...</p>
+
+      <form class="search-group" data-type="series">
+        <input type="search" id="searchSerie1" name="q" placeholder="Rechercher une série..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <form class="search-group" data-type="series">
+        <input type="search" id="searchSerieMotCle" name="q" placeholder="Recherche par mot-clé..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <h4>Bonne Série !</h4>
+    </section>
+
+    <section id="Musiques">
+       <i class="fa-solid fa-music icon-457b9d"></i>
+      <h3>Musiques</h3>
+      <p>Plongez dans ma playlist musicale...</p>
+
+      <form class="search-group" data-type="musiques">
+        <input type="search" id="searchMusique1" name="q" placeholder="Rechercher une musique..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <form class="search-group" data-type="musiques">
+        <input type="search" id="searchMusiqueMotCle" name="q" placeholder="Recherche par mot-clé..." autocomplete="off">
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <h4>Bonne écoute !</h4>
+    </section>
+  </main>
+
+  <footer>
+    <p> Made by Emmie B</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
