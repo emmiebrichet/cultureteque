@@ -1,17 +1,5 @@
 const db = require('../config/config');
 
-// Get all movies
-exports.getAllFilms = (req, res) => {
-  const query = 'SELECT * FROM films';
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    res.json(results);
-  });
-};
 
 // Get movie by exact actor match
 exports.getFilmByActor = (req, res) => {

@@ -12,7 +12,6 @@ const {
 } = require('../Controllers/FilmController');
 
 // Routes cohérentes et en camelCase
-router.get('/all_films', getAllFilms);
 router.get('/filmByActor/:actor', getFilmByActor);
 router.get('/filmByActorName/:actorName', getFilmByActorName);
 router.get('/filmByTitle/:title', getFilmByTitle);

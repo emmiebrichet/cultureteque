@@ -1,17 +1,5 @@
 const db = require('../config/config');
 
-// Get all books
-exports.getAllLivres = (req, res) => {
-  const query = 'SELECT * FROM livres';
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    return res.json(results);
-  });
-};
 
 // Get book by author (exact match)
 exports.getLivreByAuthor = (req, res) => {
