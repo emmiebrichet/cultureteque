@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { sequelize } = require('./backend/models');
 
 const livreRoutes = require('./backend/Routes/livreRoute');
@@ -9,19 +10,25 @@ const serieRoutes = require('./backend/Routes/serieRoute');
 const app = express();
 const PORT = 2424;
 
+// Middleware CORS
+app.use(cors());
+
+// Si tu veux limiter au front :
+// app.use(cors({ origin: 'http://localhost:5500' }));
+
 // Middleware JSON
 app.use(express.json());
 
-// Fichiers statiques
+// Fichiers statiques (ton front)
 app.use(express.static('frontend'));
 
-// Routes API
+// Routes API (toutes tes routes de livres seront sous /livres)
 app.use('/livres', livreRoutes);
 app.use('/musiques', musiqueRoutes);
 app.use('/films', filmRoutes);
 app.use('/series', serieRoutes);
 
-// Test API
+// Route de test
 app.get('/api', (req, res) => {
     res.json({ message: "Bienvenue sur l'API de mon projet" });
 });
