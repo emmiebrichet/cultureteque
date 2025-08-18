@@ -1,17 +1,5 @@
 const db = require('../config/config');
 
-// Get all musiques
-exports.getAllMusique = (req, res) => {
-  const query = 'SELECT * FROM musiques';
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    res.json(results);
-  });
-};
 
 // Get musique by artist (exact match)
 exports.getMusiqueByArtist = (req, res) => {
@@ -33,34 +21,6 @@ exports.getMusiqueByArtistName = (req, res) => {
   const query = 'SELECT * FROM musiques WHERE artiste LIKE ?';
 
   db.query(query, [`%${artistName}%`], (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    res.json(results);
-  });
-};
-
-// Get musique by album (exact match)
-exports.getMusiqueByAlbum = (req, res) => {
-  const album = req.params.album;
-  const query = 'SELECT * FROM musiques WHERE album = ?';
-
-  db.query(query, [album], (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    res.json(results);
-  });
-};
-
-// Get musique by a word in album (partial match)
-exports.getMusiqueByWordInAlbum = (req, res) => {
-  const word = req.params.word;
-  const query = 'SELECT * FROM musiques WHERE album LIKE ?';
-
-  db.query(query, [`%${word}%`], (err, results) => {
     if (err) {
       console.error('Erreur SQL:', err);
       return res.status(500).json({ message: 'Erreur serveur' });

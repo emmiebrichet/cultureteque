@@ -1,18 +1,5 @@
 const db = require('../config/config');
 
-// Get all series
-exports.getAllSerie = (req, res) => {
-  const query = 'SELECT * FROM series';
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      return res.status(500).json({ message: 'Erreur serveur' });
-    }
-    res.json(results);
-  });
-};
-
 // Get serie by actor (exact match)
 exports.getSerieByActor = (req, res) => {
   const actor = req.params.actor;
