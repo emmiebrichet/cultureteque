@@ -13,9 +13,6 @@ const PORT = 2424;
 // Middleware CORS
 app.use(cors());
 
-// Si tu veux limiter au front :
-// app.use(cors({ origin: 'http://localhost:5500' }));
-
 // Middleware JSON
 app.use(express.json());
 
