@@ -1,6 +1,35 @@
 const db = require('../config/config');
+// Récupérer le premier livre de chaque genre
+exports.getPremierParGenre = (req, res) => {
+  const query = `
+    SELECT * FROM livres AS l1
+    WHERE id = (
+      SELECT id FROM livres AS l2
+      WHERE l2.genre = l1.genre
+      ORDER BY id ASC
+      LIMIT 1
+    )
+  `;
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.json(results);
+  });
+};
 
-
+//Get all books
+exports.getAllLivres = (req, res) => {
+  const query = 'SELECT * FROM livres';
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Erreur SQL:', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    return res.json(results);
+  });
+};
 
 // Get book by author (exact match)
 exports.getLivreByAuthor = (req, res) => {

@@ -1,17 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-
 const {
   getLivreByAuthor,
   getLivreByAuthorName,
   getLivreByTitle,
   getLivreByWordInTitle,
   getLivreByMotCle,
-  getLivreByGenre
+  getLivreByGenre,
+  getAllLivres,
+  getPremierParGenre
 } = require('../Controllers/LivreController');
 
-// Routes claires et en camelCase
+router.get('/allLivres', getAllLivres);
+router.get('/premierParGenre', getPremierParGenre); // <-- nouvelle route
 router.get('/livreByAuthor/:author', getLivreByAuthor);
 router.get('/livreByAuthorName/:authorName', getLivreByAuthorName);
 router.get('/livreByTitle/:title', getLivreByTitle);
